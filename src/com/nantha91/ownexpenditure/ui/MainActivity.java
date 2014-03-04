@@ -4,12 +4,13 @@ import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
-
 import android.app.Activity;
 import android.content.ContentValues;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
@@ -141,4 +142,13 @@ public class MainActivity extends Activity implements
 		} else
 			return false;
 	}
+
+	/*
+	 * @Override public boolean onCreateOptionsMenu(Menu menu) { // TODO
+	 * Auto-generated method stub MenuInflater inflater = getMenuInflater();
+	 * inflater.inflate(R.menu.main, menu); return
+	 * super.onCreateOptionsMenu(menu);
+	 * 
+	 * }
+	 */
 }
