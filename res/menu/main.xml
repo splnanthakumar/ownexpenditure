@@ -2,8 +2,33 @@
 
     <item
         android:id="@+id/action_settings"
+        android:icon="@drawable/ic_action_overflow"
         android:orderInCategory="100"
-        android:showAsAction="never"
+        android:showAsAction="always"
         android:title="@string/action_settings"/>
+    <item
+        android:id="@+id/add_item"
+        android:icon="@drawable/ic_launcher"
+        android:showAsAction="always"
+        android:title="add">
+    </item>
+    <item
+        android:id="@+id/delete"
+        android:icon="@drawable/ic_launcher"
+        android:showAsAction="always"
+        android:title="add">
+    </item>
+    <item
+        android:id="@+id/aboutme"
+        android:icon="@drawable/ic_launcher"
+        android:showAsAction="ifRoom"
+        android:title="add">
+    </item>
+      <item
+        android:id="@+id/aboutme"
+        android:icon="@drawable/ic_launcher"
+        android:showAsAction="ifRoom"
+        android:title="add">
+    </item>
 
 </menu>

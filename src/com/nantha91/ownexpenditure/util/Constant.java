@@ -9,10 +9,10 @@ public class Constant {
 	public static boolean checkData(EditText data) {
 		if (data.getText().toString().trim().length() > 0) {
 			data.setBackgroundResource(R.drawable.bg_black);
-			data.requestFocus();
 			return true;
 		} else {
 			data.setBackgroundResource(R.drawable.bg_red);
+			data.requestFocus();
 			return false;
 		}
 	}
