@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#839ED5"
+    android:orientation="vertical"
+    android:padding="5dp" >
+
+   <!--  <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent" >
+ -->
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="2dp" >
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:id="@+id/txt_News"
+                    style="@style/TextStyle"
+                    android:text="NEWS" />
+
+                <EditText
+                    android:id="@+id/edtxt_News"
+                    style="@style/EditTextStyle" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:orientation="vertical"
+                android:padding="2dp" >
+
+                <TextView
+                    android:id="@+id/txt_Technical"
+                    style="@style/TextStyle"
+                    android:text="TECHNICAL" />
+
+                <EditText
+                    android:id="@+id/edtxt_Technical"
+                    style="@style/EditTextStyle" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:orientation="vertical"
+                android:padding="2dp" >
+
+                <TextView
+                    android:id="@+id/txt_Hobby"
+                    style="@style/TextStyle"
+                    android:text="HOBBY" />
+
+                <EditText
+                    android:id="@+id/edtxt_Hobby"
+                    style="@style/EditTextStyle" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:orientation="vertical"
+                android:padding="2dp" >
+
+                <TextView
+                    android:id="@+id/txt_Other"
+                    style="@style/TextStyle"
+                    android:text="OTHER" />
+
+                <EditText
+                    android:id="@+id/edtxt_Other"
+                    style="@style/EditTextStyle" />
+            </LinearLayout>
+        </LinearLayout>
+  <!--   </ScrollView> -->
+
+</LinearLayout>

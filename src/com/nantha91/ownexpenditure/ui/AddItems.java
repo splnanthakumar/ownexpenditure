@@ -2,13 +2,17 @@ package com.nantha91.ownexpenditure.ui;
 
 import android.app.Activity;
 import android.content.ContentValues;
+import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
+import android.widget.CalendarView;
+import android.widget.CalendarView.OnDateChangeListener;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.nantha91.ownexpenditure.R;
 import com.nantha91.ownexpenditure.util.Constant;
@@ -23,6 +27,8 @@ public class AddItems extends Activity implements OnClickListener {
 	Button b_add, b_cancel;
 	TextView t_item_name, t_item_price;
 	EditText ed_item_name, ed_item_price;
+	Context context=AddItems.this;
+	
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -34,8 +40,9 @@ public class AddItems extends Activity implements OnClickListener {
 	}
 
 	private SQLiteDatabase sqlitecreateDB() {
-
-		return new MainActivity().sqlite;
+		SQLiteDatabase sql = openOrCreateDatabase("expenditure",
+				SQLiteDatabase.CREATE_IF_NECESSARY, null);
+		return sql;
 
 	}
 
@@ -48,11 +55,12 @@ public class AddItems extends Activity implements OnClickListener {
 		t_item_price = (TextView) findViewById(R.id.txt_itemprice);
 		ed_item_name = (EditText) findViewById(R.id.edtxt_itemname);
 		ed_item_price = (EditText) findViewById(R.id.edtxt_itemprice);
+		
 		// listeners
 		b_add.setOnClickListener(this);
 		b_cancel.setOnClickListener(this);
 	}
-
+	
 	@Override
 	public void onClick(View arg0) {
 		// TODO Auto-generated method stub
@@ -61,12 +69,17 @@ public class AddItems extends Activity implements OnClickListener {
 			if (check())
 				insertData(ed_item_name.getText().toString().trim(),
 						ed_item_price.getText().toString().trim());
+			else
+				Constant.ToastLong(context,
+						"Please correct the mandatory fields");
 
 			break;
 		case R.id.btn_cancel:
 			finish();
 			break;
-
+		case R.id.calendarView1:
+			Constant.ToastShort(context, "clicked");
+			break;
 		default:
 			break;
 		}
@@ -76,8 +89,8 @@ public class AddItems extends Activity implements OnClickListener {
 	private void insertData(String itemname, String itemprice) {
 		// TODO Auto-generated method stub
 		ContentValues content = new ContentValues();
-		content.put("item", itemname);
-		content.put("price", itemprice);
+		content.put("name", itemname);
+		content.put("rupees", itemprice);
 		sqlite.insert("items", null, content);
 
 	}
@@ -90,5 +103,7 @@ public class AddItems extends Activity implements OnClickListener {
 		else
 			return false;
 	}
+
+	
 
 }
